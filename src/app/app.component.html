@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h2>Receptlistan</h2>
+
+    <div>
+        <div *ngFor="let recipe of recipes">
+            <img [src]="recipe.imageUrl" alt="{{recipe.name}} image">
+            <h3>{{ recipe.name }}</h3>
+            <h5>
+                <b>Betyg</b> : <span>{{recipe.rating}}</span>
+            </h5>  <br>
+            {{ recipe.description}} <br>
+
+            <a href="#" (click)="toggleMainIngr($event)">Huvudingredienser</a>
+
+            <p *ngIf="showMainingredients">
+                {{ recipe.mainIngredients }}
+            </p>
+
+        </div>
+    </div>
+
+</div>
