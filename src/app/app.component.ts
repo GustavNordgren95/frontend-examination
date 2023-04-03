@@ -8,15 +8,6 @@ import { recipesData } from './recipes';
 })
 export class AppComponent implements OnInit {
 
-  recipes = recipesData;
-
-  showMainingredients: boolean = false;
-
-  toggleMainIngr(event : MouseEvent): void {
-    event.preventDefault();
-    this.showMainingredients = !this.showMainingredients;
-  }
-
   constructor() { }
 
   ngOnInit(): void {

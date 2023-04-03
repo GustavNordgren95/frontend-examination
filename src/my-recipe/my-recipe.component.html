@@ -1,0 +1,25 @@
+<div *ngFor="let recipe of recipes">
+    <div>
+        <img [src]="recipe.imageUrl" alt="{{recipe.name}} image">
+        <div class="info">
+            <h3>
+                <a href="detaljsida">{{ recipe.name }}</a>
+            </h3>
+    
+          <h5>
+            <b>Betyg</b> : <span>{{recipe.rating}}</span>
+          </h5>
+    
+          <div>
+            {{ recipe.description}}
+          </div>
+    
+          <a href="#" (click)="toggleMainIngr($event)">Huvudingredienser</a>
+          <p *ngIf="showMainingredients">
+            {{ recipe.mainIngredients }}
+          </p>
+
+        </div>
+        
+     </div> 
+</div>
