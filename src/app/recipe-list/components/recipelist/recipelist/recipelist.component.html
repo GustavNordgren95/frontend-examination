@@ -1,0 +1,7 @@
+<h4>Receptlistan</h4>
+
+<ng-container *ngIf="!selectedCar">
+    <app-recipe *ngFor="let myRecipe of recipes" [recipe]="myRecipe" (selectedCar)="onCarSelected($event)"></app-recipe>
+</ng-container>
+
+<app-recipe-detail *ngIf="selectedCar" [recipe]="selectedCar" (close)="onCloseDetail($event)"></app-recipe-detail>

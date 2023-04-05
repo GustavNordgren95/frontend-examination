@@ -1,0 +1,26 @@
+<div *ngIf="recipe">
+    <div class="mt-4">
+        <button class="btn btn-primary ms-2" (click)="onCloseConfigurator(false)">Tillbaka till receptlistan</button>
+    </div>
+    <h2><b>{{ recipe.name }}</b></h2>
+    <div>
+        <img [src]="recipe.imageUrl" alt="{{recipe.name}}">
+    </div>
+
+    <div>{{ recipe.description }}</div>
+
+    <div>
+        <b>Betyg</b>: {{recipe.rating}} <span><b>Tidsåtgång : </b> : {{recipe.timeSpan}}</span>
+    </div>
+
+    <div class="mt-2">
+        <h3>Ingredienser</h3>
+        <li class="ps-3" *ngFor="let equipment of recipe.ingredients">{{ equipment }}</li>
+    </div>
+
+    <div>
+        <h3>Gör så här</h3>
+        <li *ngFor="let step of recipe.steps">{{step}}</li>
+    </div>
+    
+</div>

@@ -1,0 +1,22 @@
+<div *ngIf="recipe" class="mb-3">  
+    <div>
+        <img [src]="recipe.imageUrl" alt="{{recipe.name}}">
+    </div>
+    <div>
+        <button class="btn btn-primary ms-2" (click)="onConfigureCar()">
+            {{recipe.name}}
+        </button>
+    </div>
+    <h5>
+        <b>Betyg</b> : <span>{{recipe.rating}}</span>
+    </h5>
+    <div>
+        {{recipe.description}}
+    </div>
+
+    <a href="#" (click)="toggleMainIngr($event)">Huvudingredienser</a>
+
+            <p *ngIf="showMainingredients">
+                {{ recipe.mainIngredients }}
+            </p>
+</div>
