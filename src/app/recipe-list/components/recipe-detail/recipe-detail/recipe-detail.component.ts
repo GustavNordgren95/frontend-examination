@@ -17,4 +17,14 @@ export class RecipeDetailComponent {
   onCloseConfigurator(sentRequest: boolean) {
     this.close.emit(sentRequest);
   }
+
+  betyg?: string;
+  showForm: boolean = true;
+  showConfirmation: boolean = false;
+
+  onSubmit() {
+    this.showForm = false;
+    this.showConfirmation = true;
+    console.log("Betyg : " + this.betyg)
+  }
 }

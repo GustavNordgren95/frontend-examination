@@ -23,9 +23,19 @@
         <li *ngFor="let step of recipe.steps">{{step}}</li>
     </div>
 
-    <div>
-        <h3>Sätt betyg</h3>
-        
+    <div *ngIf="showForm" class="mt-4">
+        <b>Sätt betyg, 1 till 5</b>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group mb-3">
+                <input type="betyg" class="form" [(ngModel)]="betyg" name="betyg" autofocus required>
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Skicka</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="showConfirmation" class="mt-4">
+        <p><b>Betyg godtagen : </b> <i>{{ betyg }}</i> </p>
     </div>
     
 </div>

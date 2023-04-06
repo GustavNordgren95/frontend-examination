@@ -8,18 +8,18 @@ import { RecipesList } from 'src/app/recipeinterface';
   styleUrls: ['./recipelist.component.scss']
 })
 export class RecipelistComponent {
-    // Borde ha kommit från en fil eller ett API
-recipe = recipesData;
+    
+  recipe = recipesData;
 
-recipes: Array<RecipesList> = this.recipe;
-selectedRecipe?: RecipesList;
+  recipes: Array<RecipesList> = this.recipe;
+  selectedRecipe?: RecipesList;
 
-onRecipeSelected(car: RecipesList): void {
-  this.selectedRecipe = car;
-}
+  onRecipeSelected(recipe: RecipesList): void {
+    this.selectedRecipe = recipe;
+  }
 
-onCloseDetail(sentRequest: boolean) {
-  this.selectedRecipe = undefined;
-  // Här kommer sentRequest att vara true om användaren bad om en offert
-}
+  onCloseDetail(sentRequest: boolean) {
+    this.selectedRecipe = undefined;
+  
+  }
 }

@@ -1,4 +1,4 @@
-<h4>Receptlistan</h4>
+<h1>Receptlistan</h1>
 
 <ng-container *ngIf="!selectedRecipe">
     <app-recipe *ngFor="let myRecipe of recipes" [recipe]="myRecipe" (selectedRecipe)="onRecipeSelected($event)"></app-recipe>
