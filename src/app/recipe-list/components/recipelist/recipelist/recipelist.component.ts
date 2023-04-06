@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RecipesList, recipesData } from 'src/app/recipes';
+import { recipesData } from 'src/app/recipes';
+import { RecipesList } from 'src/app/recipeinterface';
 
 @Component({
   selector: 'app-recipelist',
@@ -11,14 +12,14 @@ export class RecipelistComponent {
 recipe = recipesData;
 
 recipes: Array<RecipesList> = this.recipe;
-selectedCar?: RecipesList;
+selectedRecipe?: RecipesList;
 
-onCarSelected(car: RecipesList): void {
-  this.selectedCar = car;
+onRecipeSelected(car: RecipesList): void {
+  this.selectedRecipe = car;
 }
 
 onCloseDetail(sentRequest: boolean) {
-  this.selectedCar = undefined;
+  this.selectedRecipe = undefined;
   // Här kommer sentRequest att vara true om användaren bad om en offert
 }
 }

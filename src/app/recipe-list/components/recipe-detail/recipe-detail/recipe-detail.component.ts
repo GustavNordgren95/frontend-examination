@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RecipesList } from 'src/app/recipes';
+import { RecipesList } from 'src/app/recipeinterface';
 
 @Component({
   selector: 'app-recipe-detail',

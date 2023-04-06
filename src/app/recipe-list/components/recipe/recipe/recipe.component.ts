@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RecipesList } from 'src/app/recipes';
+import { RecipesList } from 'src/app/recipeinterface';
 
 @Component({
   selector: 'app-recipe',
@@ -12,10 +12,10 @@ export class RecipeComponent {
   recipe?: RecipesList;
 
   @Output()
-  selectedCar = new EventEmitter<RecipesList>();
+  selectedRecipe = new EventEmitter<RecipesList>();
 
-  onConfigureCar(): void {
-    this.selectedCar.emit(this.recipe);
+  onConfigureRecipe(): void {
+    this.selectedRecipe.emit(this.recipe);
   }
 
   showMainingredients: boolean = false;
